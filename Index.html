@@ -1,0 +1,121 @@
+<html>
+<head>
+<title> SF OS </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!--login -->
+
+<div id="ls">     
+  <div class="lb"> 
+    <h1> SF OS </h1>
+    <input type="password" id="password" placeholder="enter your password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!--shut down-->
+<div id="sscreen">  
+<h1>Shutting down.....</h1>
+</div>
+<!--main-->
+<div id="sm">     
+  <div onclick="openApp('notepad')">📝 Notepad</div>
+  <div onclick="openApp('calc')">🧮 Calculator</div>
+  <div onclick="openApp('browser')">🌐 Browser</div>
+  <div onclick="openApp('settings')">⚙️ Settings</div>
+</div>
+<!--desktop-->
+<div id="desktop">
+  <div class="i" data-i"📝" onclick="openApp('notepad')">Notepad</div>
+  <div class="i" data-i="🧮" onclick="openApp('calc')">Calculator</div>
+  <div class="i" data-i="🌐" onclick="openApp('browser')">Browser</div>
+  <div class="i" data-i="⚙️" onclick="openApp('settings')">Settings</div>
+</div>
+
+<!--taskbsr -->
+<div id="tbar">   
+  <button onclick="toggleStart()">☰</button>
+  <div id="tapps"></div>    
+  <div id="clock"></div>
+  <button onclick="shutdown()">⏻</button>
+  <div id="tapps"></div>     
+  <div id="clock"></div>
+
+</div>
+<!--caclulator code-->
+<div class="window" id="calc">
+
+  <div class="title">Calculator <span onclick="closeApp('calc')">✖</span></div>
+  <div class="content">
+
+    <input id="cd" readonly> 
+    <div class="grid">
+      <button onclick="calc('7')">7</button>
+
+      <button onclick="calc('8')">8</button>
+      <button onclick="calc('9')">9</button>
+      <button onclick="calc('/')">/</button>
+
+      <button onclick="calc('4')">4</button>
+      <button onclick="calc('5')">5</button>
+
+      <button onclick="calc('6')">6</button>
+      <button onclick="calc('*')">*</button>
+
+      <button onclick="calc('1')">1</button>
+      <button onclick="calc('2')">2</button>
+      <button onclick="calc('3')">3</button>
+      <button onclick="calc('-')">-</button>
+
+      <button onclick="calc('0')">0</button>
+      <button onclick="calc('.')">.</button>
+      <button onclick="calc('=')">=</button>
+      <button onclick="calc('+')">+</button>
+
+      <button onclick="calc('C')" style="grid-column: span 4;">Clear</button>
+    
+    </div>
+
+  </div>
+</div>
+
+<!--notepzd-->
+<div class="window" id="npad">   
+  <div class="title">Notepad <span onclick="closeApp('notepad')">✖</span></div>
+ 
+  <textarea placeholder="Write here..."></textarea>
+</div>
+
+<!--browser-->
+<div class="window" id="b"> 
+  <div class="title">Browser <span onclick="closeApp('browser')">✖</span></div>
+  <div class="content">
+    <input id="ub" placeholder="Enter URL">   
+    <button onclick="loadSite()">Go</button>
+    <iframe id="browserFrame"></iframe>
+  </div>
+</div>
+
+<!-- settings -->
+<div class="window" id="s"> 
+  <div class="title">Settings <span onclick="closeApp('settings')">✖</span></div>
+  <div class="sui">  
+    <h2>🎨 Wallpapers</h2>
+
+    <div class="wallpapers">
+      <div class="wall" onclick="setWall(0)"></div>
+      <div class="wall" onclick="setWall(1)"></div>
+      <div class="wall" onclick="setWall(2)"></div>
+    </div>
+
+    <h3>📁 Upload Background</h3>
+    <input type="file" accept="image/*" onchange="uploadWall(event)">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
